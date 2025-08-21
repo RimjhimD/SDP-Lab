@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,3 +44,5 @@ Route::view('/master',view:'master');
 Route::view('/feature1',view:'feature1');
 Route::view('/feature2',view:'feature2');
 Route::view('/feature3',view:'feature3');
+Route::get('student',[StudentController::class, 'index']);
+Route::get('student/course',[StudentController::class, 'getcourse']);
